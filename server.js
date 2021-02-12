@@ -22,7 +22,7 @@ mongoose.connect(dbConfig.url, {
 });
 
 app.get('/sc-user/', (req, res) => {
-    res.json({"message": "Hello world."});
+    res.json({"message": "Hello world - User"});
 });
 
 require('./app/routes/user.routes.js')(app);
