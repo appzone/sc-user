@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: sc-user
-          image: registry.digitalocean.com/sejutacita/sc-user:3
+          image: <IMAGE>
           imagePullPolicy: Always
           command: [ "node" ]
           args: [ "server.js" ]
