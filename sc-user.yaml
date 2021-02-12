@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sc-user-service
+  labels:
+    v: sc
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 3000
+  selector:
+    app: sc-user
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sc-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sc-user
+  template:
+    metadata:
+      labels:
+        app: sc-user
+        v: sc
+    spec:
+      containers:
+        - name: sc-user
+          image: registry.digitalocean.com/sejutacita/sc-user:3
+          imagePullPolicy: Always
+          command: [ "node" ]
+          args: [ "server.js" ]
+          env:
+          - name: microservice
+            value: sc-user
+          ports:
+          - containerPort: 3000
