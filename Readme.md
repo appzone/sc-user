@@ -13,8 +13,11 @@ Docker Registry : Digitalocean
 
 ### Path : 
 ```
-/login (POST) ==> to do login
-/refresh (POST) ==> to do refresh token
+/users (POST) ==> to create user
+/users (GET) => to get all user
+/users/:userId (GET) => to get user by user id
+/users/:userId (PUT) => to update user by user id
+/users/:userId (DELETE) => to delete user by user id
 ```
 for more detail of the api path can be found on http://167.99.29.250/sc-swagger/
 
