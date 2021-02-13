@@ -21,6 +21,7 @@ for more detail of the api path can be found on http://167.99.29.250/sc-swagger/
 
 ## Configuration / Setup
 
+
 1. Manual localhost run
 ```javascript
 npm install
@@ -42,6 +43,7 @@ where xxx is the docker image name (must have same value as per step 2)
 ```
 Run kubernetes command
 ```
+kubectl --kubeconfig="kubeconfig.yaml" apply -f sc-ingress.yaml
 kubectl --kubeconfig="kubeconfig.yaml" apply -f sc-user.yaml
 ```
 4. Automate kubernetes (deployed to Digitalocean)
