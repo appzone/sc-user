@@ -16,3 +16,7 @@ spec:
         backend:
           serviceName: sc-auth-service
           servicePort: 80
+      - path: /sc-swagger
+        backend:
+          serviceName: sc-swagger-service
+          servicePort: 80
